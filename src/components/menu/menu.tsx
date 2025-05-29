@@ -25,14 +25,6 @@ const MenuBar: React.FC = () => {
                     </li>
                     <li>
                         <NavLink
-                            to="/cadastrar-avaliacao"
-                            className={({ isActive }) => (isActive ? 'link-ativo' : undefined)}
-                        >
-                            Cadastrar Avaliação
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
                             to="/avaliacao"
                             className={({ isActive }) => (isActive ? 'link-ativo' : undefined)}
                         >

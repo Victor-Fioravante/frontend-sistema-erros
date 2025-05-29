@@ -56,4 +56,14 @@ h1, h2, h3, h4, h5, h6 {
 :root {
   background-color: #242424;
   color: rgba(255, 255, 255, 0.87); 
+  display: flex;
+  justify-content: center;
+  
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

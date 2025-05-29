@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { SuggestionList } from './pages/suggestionList.tsx'
 import EvaluationList from './pages/evaluationList.tsx'
-import EvaluationRegister from './pages/evaluationRegister.tsx'
+// import EvaluationRegister from './pages/evaluationRegister.tsx'
 import SuggestionRegister from './pages/suggestionRegister.tsx';
 import { MenuBar } from './index.ts';
 
@@ -18,7 +18,7 @@ function App() {
         <Route path="/sugestao" element={<SuggestionList />} />
         <Route path="/cadastrar-sugestao" element={<SuggestionRegister />} />
         <Route path="/avaliacao" element={<EvaluationList />} />
-        <Route path="/cadastrar-avaliacao" element={<EvaluationRegister />} />
+        {/* <Route path="/cadastrar-avaliacao" element={<EvaluationRegister />} /> */}
       </Routes>
     </Router>
   );

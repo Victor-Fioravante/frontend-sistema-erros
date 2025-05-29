@@ -45,6 +45,7 @@ function SuggestionForm({ create }: Props) {
         <>
             <Box as="form" onSubmit={handleSubmit} width="100%"> {/* Formulário */}
                 <VStack gap={4} mb={4}> {/* Agrupamento vertical dos inputs */}
+                    Insira o código de erro e a sugestão de solução abaixo:
                     <Input // Campo para o código de erro.
                         placeholder="Código de erro (6 dígitos)"
                         value={errorCode}
