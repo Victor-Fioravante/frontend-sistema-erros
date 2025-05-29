@@ -10,7 +10,7 @@ const MenuBar: React.FC = () => {
                     <li> 
                         <NavLink
                             to="/cadastrar-sugestao" 
-                            className={({ isActive }) => (isActive ? 'link-ativo' : undefined)}
+                            className='link-ativo'
                         >
                             Cadastrar Sugestão
                         </NavLink>
@@ -18,7 +18,7 @@ const MenuBar: React.FC = () => {
                     <li>
                         <NavLink
                             to="/sugestao"
-                            className={({ isActive }) => (isActive ? 'link-ativo' : undefined)}
+                            className='link-ativo'
                         >
                             Consultar Sugestões
                         </NavLink>
@@ -26,7 +26,7 @@ const MenuBar: React.FC = () => {
                     <li>
                         <NavLink
                             to="/avaliacao"
-                            className={({ isActive }) => (isActive ? 'link-ativo' : undefined)}
+                            className='link-ativo'
                         >
                             Consultar Avaliações
                         </NavLink>
