@@ -1,0 +1,19 @@
+li {
+    padding-right: 5rem ;
+}
+
+.menu-list, .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    width: 100%;
+    margin: 1rem;
+}
+
+.menu-list {
+    list-style: none;
+    
+}
