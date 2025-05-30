@@ -8,35 +8,32 @@ const MenuBar: React.FC = () => {
         <div className="menu">
             <nav className="menu-bar">
                 <ul className="menu-list">
-                    <li> 
-                        <Button className='button-menu'>
+                    <li className='list'> 
                         <NavLink
                             to="/cadastrar-sugestao" 
                             className='link-ativo'
                         >
-                            Cadastrar Sugestão
+                            <Button className='button-menu'>Cadastrar Sugestão</Button>
                         </NavLink>
-                        </Button>
                     </li>
-                    <li>
-                        <Button className='button-menu'>
+                    <li className='list'>
+                        
                         <NavLink
                             to="/sugestao"
                             className='link-ativo'
                         >
-                            Consultar Sugestões
+                            <Button className='button-menu'>Consultar Sugestões</Button>
                         </NavLink>
-                        </Button>
+                        
                     </li>
                     <li>
-                        <Button className='button-menu'>
+                        
                         <NavLink
                             to="/avaliacao"
                             className='link-ativo'
                         >
-                            Consultar Avaliações
+                        <Button className='button-menu'>Consultar Avaliações</Button>    
                         </NavLink>
-                        </Button>
                     </li>
                 </ul>
             </nav>

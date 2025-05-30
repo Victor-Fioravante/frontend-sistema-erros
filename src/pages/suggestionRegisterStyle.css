@@ -1,6 +1,78 @@
-.feedback {
+.feedback Text {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.box-suggestion {
+    padding: 16px;
+    gap: 16rem;
+    box-shadow: 0 2px 4px -1px rgba(255,255,255,255), 
+                0 1px 2px -1px rgba(255,255,255,255);
+    border-width: 1px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    min-width: 250px;
+    max-width: 100%;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .box-suggestion {
+        flex-direction: column;
+        gap: 1%;
+    }
+
+    /* .expand-button {
+        transition: 80ms;
+    } */
+
+    .expand-button:hover {
+    color: white;
+    background-color: #ffffff;
+    transition: 80ms;
+}
+}
+
+.box-content {
+    display: flex; 
+    flex-direction: row;    
+}
+
+.box-text {
+    max-width: 13rem; /* Define até onde o texto pode ir */
+    word-wrap: break-word; /* Força quebra de palavras muito grandes */
+    overflow: hidden; /* Esconde o excesso */
+    text-overflow: ellipsis; /* Mostra "..." se ultrapassar */
+    white-space: nowrap; /* Mantém em uma linha, quebra se quiser */
+}
+
+.box-text.expanded {
+  white-space: normal;   /* Quebra linhas */
+  overflow: visible;     /* Mostra tudo */
+  text-overflow: unset;  /* Remove "..." */
+}
+
+.expand-button {
+    color: aliceblue;
+    width: 50%;
+    margin: 10% 0;
+    border-radius: 8px;
+}
+
+.expand-button:hover {
+    color: black;
+}
+
+.box-button {
+    /* display: flex; */
+    justify-content: right;
+    width: 20%;
+}
+
+.stack-button {
+    border-radius: 16px;
+    margin-top: 26%;
 }

@@ -19,6 +19,13 @@ export interface suggestionCreate {
     text: string;
 }
 
+export interface evaluationCreate {
+    errorCode: string;
+    clientCode: string;
+    rating: boolean;
+    comment?: string;
+}
+
 const API_URL = 'http://localhost:3000/api';
 
 export async function getSuggestions(code?: string): Promise<suggestion[]> {
@@ -55,3 +62,17 @@ export async function getEvaluations(): Promise<evaluation[]> {
     return response.json();
 }
 
+export async function createEvaluation(evaluation : evaluationCreate): Promise<evaluationCreate> {
+    const response = await fetch (`${API_URL}/evaluation`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application.json',
+        },
+        body: JSON.stringify(evaluation),
+    });
+    if (!response.ok) {
+        throw new Error ('Falha ao cadastrar a avaliação')
+    }
+    return response.json();
+    
+}

@@ -1,19 +1,19 @@
-li {
+.list {
     padding-right: 5rem ;
 }
 
 .menu {
     width: 100%;
-    margin: 1rem;
+    margin-top: 1rem;
 }
 
-.menu-list {
+.menu-bar {
     list-style: none;
-    
+    display: flex;
+    justify-content: center;
 }
 
-
-.menu-list, .menu, .menu-bar{
+.menu-list, .menu {
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -24,8 +24,6 @@ li {
     .menu-list {
         flex-direction: column;
         justify-content: center;
-        /* align-items: center; */
-        /* padding-right: 2.5rem; */
     }
 
     .link-ativo {
@@ -37,18 +35,10 @@ li {
         padding: 1rem;
         margin: 0.5rem 0;
     }
-}
 
-/* .link-ativo:hover {
-    opacity: 100%;
-    text-decoration: none;
-    transition: 300ms;
-} */
-
-.link-ativo {
-    opacity: 60%;
-    color: #ffffff;
-    transition: 300ms;
+    .list {
+        padding: 0;
+    }
 }
 
 .button-menu {
@@ -58,13 +48,15 @@ li {
     cursor: pointer;
     border-radius: 12px;
     transition: 300ms;
+    opacity: 60%;
+    transition: 300ms;
+
 }
 
 .button-menu:hover {
     background-color: gray;
     transition: 300ms;
-    .link-ativo {
-        opacity: 100%;
-        text-decoration: none;
-    }
+    opacity: 100%;
+    text-decoration: none;
+    
 }
