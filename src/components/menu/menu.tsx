@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom'; 
 import './menuStyle.css';
 import { Button } from '@chakra-ui/react';
+
+
 
 const MenuBar: React.FC = () => { 
     return (
@@ -38,6 +40,8 @@ const MenuBar: React.FC = () => {
                 </ul>
             </nav>
         </div>
+        
+        
     );
 }
 

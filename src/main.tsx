@@ -9,10 +9,12 @@ import EvaluationList from './pages/evaluationList.tsx'
 // import EvaluationRegister from './pages/evaluationRegister.tsx'
 import SuggestionRegister from './pages/suggestionRegister.tsx';
 import { MenuBar } from './index.ts';
+import DarkModeToggle from './components/darkMode-button/darkMode-button.tsx';
 
 function App() {
   return (
     <Router>
+      <DarkModeToggle/> 
       <MenuBar />
       <Routes>
         <Route path="/sugestao" element={<SuggestionList />} />

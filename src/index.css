@@ -67,3 +67,20 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   justify-content: center;
 }
+
+body.dark-mode {
+  background-color: #242424;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+body:not(.dark-mode) {
+  background-color: #f0f0f0;
+  color: #242424;
+}
+
+.darkmode {
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}

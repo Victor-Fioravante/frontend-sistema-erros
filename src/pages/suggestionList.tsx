@@ -1,18 +1,16 @@
 // src/pages/suggestionList.tsx
 import { useEffect, useState } from 'react';
-import { getSuggestions } from '../api'; // Ajuste o caminho se necessário
-import type { suggestion } from '../api'; // Ajuste o caminho se necessário
-import { Box, Text, Heading, Stack, Button } from '@chakra-ui/react'; // Alert e AlertIcon mantidos para erros da API
-import { SuggestionSearch } from '../components/suggestion/suggestionSearch'; // Importa o novo componente
+import { getSuggestions } from '../api';
+import type { suggestion } from '../api';
+import { Text, Stack } from '@chakra-ui/react'; 
+import { SuggestionSearch } from '../components/suggestion/suggestionSearch'; 
 
-import './suggestionRegisterStyle.css'; // Importa o CSS para estilos adicionais
+import './suggestionRegisterStyle.css';
 import { SuggestionItem } from '../components/suggestion/suggestionItem';
 
 export function SuggestionList() {
     const [suggestions, setSuggestions] = useState<suggestion[]>([]);
     const [apiError, setApiError] = useState<string | null>(null); // Estado para erros da API
-
-    const [expanded, setExpanded] = useState(false);
 
     async function fetchSuggestionsData(errorCode?: string) {
         setApiError(null); // Limpa erros anteriores da API
@@ -37,9 +35,9 @@ export function SuggestionList() {
     
     return (
         <Stack gap={4} p={4} style={{ width: '100%' }}>
+
             {/* Componente de busca */}
             <SuggestionSearch onSearch={handleSearchTrigger} />
-
             {/* Exibição de erro da API */}
             {apiError && (
                 <Text className='feedback' color="red.500" mt={2} fontSize="sm"> {/* Estilo similar aos erros de formulário */}

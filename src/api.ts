@@ -26,6 +26,11 @@ export interface evaluationCreate {
     comment?: string;
 }
 
+export interface averageEvaluations {
+    errorCode: string;
+    rating: boolean;
+}
+
 const API_URL = 'http://localhost:3000/api';
 
 export async function getSuggestions(code?: string): Promise<suggestion[]> {
@@ -58,6 +63,14 @@ export async function getEvaluations(): Promise<evaluation[]> {
     const response = await fetch(`${API_URL}/evaluation`);
     if (!response.ok) {
         throw new Error('Falha ao buscar as avaliações');
+    }
+    return response.json();
+}
+
+export async function getAverageEvaluations(): Promise<averageEvaluations[]> {
+    const response = await fetch(`${API_URL}/evaluation/dashboard`);
+    if (!response.ok) {
+        throw new Error('Falha ao consultar a média de avaliações')
     }
     return response.json();
 }
