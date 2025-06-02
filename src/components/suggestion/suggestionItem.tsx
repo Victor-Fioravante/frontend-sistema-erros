@@ -13,10 +13,10 @@ export function SuggestionItem({ sug }: Props) {
   return (
     <Box className='box-suggestion' key={sug.id}>
       <Stack className='box-content'>
-        <Heading fontSize="xl">{sug.errorCode}</Heading>
+        <Heading fontSize="xl">Erro: {sug.errorCode}</Heading>
 
         <Text className={`box-text ${expanded ? 'expanded' : ''}`} mt={1}>
-          {sug.text}
+          Sugestão: {sug.text}
         </Text>
 
         <Button className="expand-button" size="sm" variant="outline" onClick={() => setExpanded(!expanded)}>
