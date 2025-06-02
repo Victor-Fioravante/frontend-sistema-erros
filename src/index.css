@@ -89,20 +89,3 @@ h6 {
   flex-direction: column;
   justify-content: center;
 }
-
-body.dark-mode {
-  background-color: #242424;
-  color: #f0f0f0;
-}
-
-body:not(.dark-mode) {
-  background-color: #f0f0f0;
-  color: #242424;
-}
-
-.darkmode {
-  border: 1px solid currentColor;
-  background: transparent;
-  color: inherit;
-  cursor: pointer;
-}

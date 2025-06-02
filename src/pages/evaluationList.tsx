@@ -1,4 +1,4 @@
-import { Box, Heading, SimpleGrid, Text, Button, Popover, PopoverTrigger, PopoverContent, PopoverArrow, PopoverHeader, PopoverBody, Stack, Spinner, Alert } from '@chakra-ui/react';
+import { Box, Heading, SimpleGrid, Text, Button, Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, Stack, Spinner } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { getEvaluations, getAverageEvaluations, getSuggestionById } from '../api';

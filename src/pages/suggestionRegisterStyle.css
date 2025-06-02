@@ -89,3 +89,11 @@
 .cancel-button:hover {
     color: #000000
 }
+
+.start-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem 0;
+    text-align: center;
+}

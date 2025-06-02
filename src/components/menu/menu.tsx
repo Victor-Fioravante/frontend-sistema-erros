@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './menuStyle.css';
 import { Button } from '@chakra-ui/react';
@@ -45,4 +44,4 @@ const MenuBar: React.FC = () => {
     );
 }
 
-export default MenuBar; 
+export default MenuBar;

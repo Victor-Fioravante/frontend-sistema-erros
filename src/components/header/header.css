@@ -1,0 +1,10 @@
+.title {
+    display: flex;
+    justify-content: center;
+    margin: 2%;
+    text-align: center;
+}
+
+.separator {
+    margin: 2%;
+}
