@@ -14,7 +14,7 @@ import DarkModeToggle from './components/darkMode-button/darkMode-button.tsx';
 function App() {
   return (
     <Router>
-      <DarkModeToggle/> 
+      <DarkModeToggle />
       <MenuBar />
       <Routes>
         <Route path="/sugestao" element={<SuggestionList />} />

@@ -1,9 +1,9 @@
-// src/components/suggestion/suggestionSearch.tsx
 import React, { useState } from 'react';
-import { Flex, Input, Button, Text, Stack } from '@chakra-ui/react'; // Importações para a UI da busca
+import { Flex, Input, Text, Stack, IconButton } from '@chakra-ui/react'; // Importações para a UI da busca
+import { LuSearch } from "react-icons/lu"
 
 interface SuggestionSearchProps {
-    onSearch: (searchTerm: string) => void; // Função chamada ao buscar
+    onSearch: (searchTerm: string) => void;
 }
 
 export function SuggestionSearch({ onSearch }: SuggestionSearchProps) {
@@ -11,13 +11,12 @@ export function SuggestionSearch({ onSearch }: SuggestionSearchProps) {
     const [inputError, setInputError] = useState<string | null>(null);
 
     const handleSearchClick = () => {
-        // Valida se o termo de busca, se preenchido, tem 6 dígitos.
         if (inputValue && !/^\d{6}$/.test(inputValue)) {
             setInputError('O código de erro deve ter 6 dígitos');
-            return; 
+            return;
         }
-        setInputError(null); // Limpa erro de validação
-        onSearch(inputValue); // Chama a função de busca
+        setInputError(null);
+        onSearch(inputValue);
     };
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -33,20 +32,21 @@ export function SuggestionSearch({ onSearch }: SuggestionSearchProps) {
                 <Input
                     placeholder="Buscar por código de erro (6 dígitos)"
                     value={inputValue}
+                    _placeholder={{ color: "#DCDCDC" }}
                     maxLength={6}
                     onChange={(e) => {
                         setInputValue(e.target.value);
-                        if (inputError) setInputError(null); // Limpa erro ao digitar
+                        if (inputError) setInputError(null);
                     }}
                     onKeyDown={handleKeyDown}
                     flex="1"
                 />
-                <Button onClick={handleSearchClick}>
-                    Buscar
-                </Button>
+                <IconButton onClick={handleSearchClick}>
+                    <LuSearch/>
+                </IconButton>
             </Flex>
-            {inputError && 
-            <Text color="red.500" fontSize="sm">{inputError}</Text>}
+            {inputError &&
+                <Text color="red.500" fontSize="sm">{inputError}</Text>}
         </Stack>
     );
 }

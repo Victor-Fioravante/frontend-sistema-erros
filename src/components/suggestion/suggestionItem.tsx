@@ -1,6 +1,7 @@
 import { Box, Stack, Heading, Text, Button } from '@chakra-ui/react';
 import { useState } from 'react';
 import type { suggestion } from '../../api';
+import EvaluateModal from '../evaluationModal/evaluateModal';
 
 interface Props {
   sug: suggestion;
@@ -22,7 +23,7 @@ export function SuggestionItem({ sug }: Props) {
           {expanded ? 'Ver menos' : 'Ver mais'}
         </Button>
 
-        <Text fontSize="sm" color="gray.500" mt={2}>
+        <Text fontSize="sm" mt={2}>
           Criado em: {new Date(sug.createdAt).toLocaleString('pt-BR')}
         </Text>
 
@@ -30,10 +31,7 @@ export function SuggestionItem({ sug }: Props) {
           Avaliações: {sug.evaluationIds.length > 0 ? sug.evaluationIds.length : 'Nenhuma'}
         </Text>
       </Stack>
-
-      <Stack className='box-button'>
-        <Button className='stack-button'>Avaliar</Button>
-      </Stack>
+        <EvaluateModal suggestionId={sug.id} suggestionError={sug.errorCode} />
     </Box>
   );
 }

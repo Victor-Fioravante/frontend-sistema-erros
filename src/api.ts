@@ -6,17 +6,26 @@ export interface suggestion {
     evaluationIds: number[];
 }
 
+export interface suggestionById {
+    text: string
+}
+export interface suggestionCreate {
+    errorCode: string;
+    text: string;
+}
+
 export interface evaluation {
     errorCode: string;
     clientCode: string;
     rating: boolean;
     comment?: string;
     suggestionId: number;
+    createdAt: Date;
 }
 
-export interface suggestionCreate {
-    errorCode: string;
-    text: string;
+export interface averageEvaluations {
+    suggestionId: number;
+    rating: boolean;
 }
 
 export interface evaluationCreate {
@@ -24,12 +33,10 @@ export interface evaluationCreate {
     clientCode: string;
     rating: boolean;
     comment?: string;
+    suggestionId: number;
 }
 
-export interface averageEvaluations {
-    errorCode: string;
-    rating: boolean;
-}
+
 
 const API_URL = 'http://localhost:3000/api';
 
@@ -44,6 +51,16 @@ export async function getSuggestions(code?: string): Promise<suggestion[]> {
     }
     return response.json();
 }
+
+export async function getSuggestionById(id: number): Promise<suggestionById> {
+    let url = `${API_URL}/suggestion/${id}`;
+    const response = await fetch(url);
+    if (!response.ok) {
+        throw new Error('Falha ao consultar sugestão')
+    }
+    return response.json();
+    }
+
 
 export async function createSuggestion(suggestion: suggestionCreate): Promise<suggestionCreate> {
     const response = await fetch(`${API_URL}/suggestion`, {
@@ -75,17 +92,16 @@ export async function getAverageEvaluations(): Promise<averageEvaluations[]> {
     return response.json();
 }
 
-export async function createEvaluation(evaluation : evaluationCreate): Promise<evaluationCreate> {
-    const response = await fetch (`${API_URL}/evaluation`, {
+export async function createEvaluation(evaluation: evaluationCreate): Promise<evaluationCreate> {
+    const response = await fetch(`${API_URL}/evaluation`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application.json',
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify(evaluation),
     });
     if (!response.ok) {
-        throw new Error ('Falha ao cadastrar a avaliação')
+        throw new Error('Falha ao cadastrar a avaliação')
     }
     return response.json();
-    
 }

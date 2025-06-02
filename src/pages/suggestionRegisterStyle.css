@@ -1,4 +1,4 @@
-.feedback Text {
+.feedback {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,10 +8,9 @@
 .box-suggestion {
     padding: 16px;
     gap: 16rem;
-    box-shadow: 0 2px 4px -1px rgba(255,255,255,255), 
-                0 1px 2px -1px rgba(255,255,255,255);
     border-width: 1px;
     border-radius: 8px;
+    border-color: rgb(167, 166, 172);
     display: flex;
     flex-direction: row;
     min-width: 250px;
@@ -25,40 +24,36 @@
         gap: 1%;
     }
 
-    /* .expand-button {
-        transition: 80ms;
-    } */
-
     .expand-button:hover {
-    color: white;
-    background-color: #ffffff;
-    transition: 80ms;
-}
+        color: white;
+        background-color: #ffffff;
+        transition: 80ms;
+    }
 }
 
 .box-content {
-    display: flex; 
-    flex-direction: row;    
+    display: flex;
+    flex-direction: row;
 }
 
 .box-text {
-    max-width: 13rem; /* Define até onde o texto pode ir */
-    word-wrap: break-word; /* Força quebra de palavras muito grandes */
-    overflow: hidden; /* Esconde o excesso */
-    text-overflow: ellipsis; /* Mostra "..." se ultrapassar */
-    white-space: nowrap; /* Mantém em uma linha, quebra se quiser */
+    max-width: 13rem;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .box-text.expanded {
-  white-space: normal;   /* Quebra linhas */
-  overflow: visible;     /* Mostra tudo */
-  text-overflow: unset;  /* Remove "..." */
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
 }
 
 .expand-button {
     color: aliceblue;
     width: 50%;
-    margin: 10% 0;
+    margin: 5% 0;
     border-radius: 8px;
 }
 
@@ -67,7 +62,7 @@
 }
 
 .box-button {
-    /* display: flex; */
+    display: flex;
     justify-content: right;
     width: 20%;
 }
@@ -75,4 +70,22 @@
 .stack-button {
     border-radius: 16px;
     margin-top: 26%;
+    padding: 0 3rem;
+    color: #ffffff;
+    background-color: rgb(0, 0, 0);
+    transition: 300ms;
+}
+
+.stack-button:hover {
+    color: #242424;
+    background-color: white;
+    transition: 300ms
+}
+
+.cancel-button {
+    color: #ffffff;
+}
+
+.cancel-button:hover {
+    color: #000000
 }

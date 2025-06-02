@@ -1,0 +1,48 @@
+.date-button {
+    width: 10rem;
+    color: #ffffff;
+    transition: 300ms;
+}
+
+.date-button:hover {
+    color: #242424;
+    transition: 300ms;
+}
+
+.text-popover {
+    margin: 1%;
+}
+
+.popover-button {
+    margin-left: 15rem;
+}
+
+@media (max-width: 768px) {
+    .popover-button {
+        margin: 0;
+    }
+
+    .popover-content {
+        width: 100%;
+    }
+
+    .comment-text {
+        max-width: 15rem;
+    }
+}
+
+.popover-content {
+    margin: 1rem 0;
+    max-height: 10rem;
+    overflow-y: auto;
+}
+
+.comment-text {
+    max-height: 10rem;
+    max-width: 37rem;
+    overflow-y: auto;
+}
+
+.card-content {
+    padding: 1% 0;
+}
